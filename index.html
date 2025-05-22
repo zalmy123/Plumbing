@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,31 +10,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <main>
-    <section id="contact-form" class="form-section">
-      <a href="contact.html">Contact Us</a>
-      <form action="https://formspree.io/f/mldbkerj" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" required>
+    <header class="hero">
+      <div class="hero-text">
+        <h1>Modern Plumbing Co.</h1>
+        <p>Your trusted plumbing solution.</p>
+      </div>
+      <div class="hero-images">
+        <img src="3.jpg" alt="Plumber at work">
+        <img src="5.jpg" alt="Pipe repair">
+        <img src="4.jpg" alt="Tools">
+      </div>
+    </header>
 
-        <label for="address">Address:</label>
-        <input type="text" name="address" id="address">
-
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required>
-
-        <label for="phone">Phone Number:</label>
-        <input type="tel" name="phone" id="phone">
-
-        <label for="need">Type of Need:</label>
-        <input type="text" name="need" id="need">
-
-        <label for="message">Message:</label>
-        <textarea name="message" id="message" required></textarea>
-
-        <button type="submit" class="btn">Send Message</button>
-      </form>
+    <section class="cta">
+      <h2>Need Help With Plumbing?</h2>
+      <div class="cta-button-wrapper">
+        <a href="contact.html" class="btn">Contact Us</a>
+      </div>
     </section>
   </main>
 
