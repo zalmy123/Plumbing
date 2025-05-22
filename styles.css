@@ -1,0 +1,155 @@
+/* Base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem;
+  background-color: #e1f5fe;
+  text-align: center;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.hero-text h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  color: #0077c2;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: white;
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  color: #0077c2;
+  transform: skew(-5deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-top: 0; /* reduced spacing */
+}
+
+.hero-images {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  min-width: 400px;
+}
+
+.hero-images img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* CTA Section */
+.cta {
+  padding: 6.5rem 2rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #0077c2;
+}
+
+.cta-button-wrapper {
+  margin-top: 2rem; /* Adds separation from the heading */
+}
+
+.btn {
+  background-color: #0077c2;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #005999;
+}
+
+/* Footer */
+footer {
+  background-color: #263238;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+}
+
+.contact-info a {
+  color: #4fc3f7;
+  text-decoration: none;
+}
+
+.contact-info i {
+  margin-right: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-images {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transform: skew(-4deg);
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
