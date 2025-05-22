@@ -1,11 +1,13 @@
+/* styles.css */
+
 /* Base styles */
 html, body {
   height: 100%;
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
   background-color: #f8f9fa;
   color: #333;
+  line-height: 1.6;
 }
 
 body {
@@ -25,7 +27,6 @@ main {
   justify-content: space-between;
   padding: 3rem;
   background-color: #e1f5fe;
-  text-align: center;
 }
 
 .hero-text {
@@ -37,31 +38,28 @@ main {
   font-family: 'Anton', sans-serif;
   font-size: 3rem;
   color: #0077c2;
-  letter-spacing: 1px;
   margin-bottom: 0.5rem;
 }
 
 .hero-text p {
-  font-family: 'Poppins', sans-serif;
+  margin-top: 0;
   font-size: 1.2rem;
-  font-weight: 500;
   background-color: white;
   display: inline-block;
   padding: 0.75rem 1.25rem;
-  color: #0077c2;
   transform: skew(-5deg);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #0077c2;
   border-radius: 5px;
-  margin-top: 0; /* reduced spacing */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .hero-images {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
   justify-content: center;
-  min-width: 400px;
+  gap: 1rem;
+  min-width: 300px;
 }
 
 .hero-images img {
@@ -86,16 +84,15 @@ main {
 }
 
 .cta-button-wrapper {
-  margin-top: 2rem; /* Adds separation from the heading */
+  margin-top: 2rem;
 }
 
 .btn {
   background-color: #0077c2;
   color: white;
   padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 5px;
   text-decoration: none;
+  border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
@@ -103,7 +100,8 @@ main {
 .btn:hover {
   background-color: #005999;
 }
-/* Form Section */
+
+/* Contact Form Section */
 .form-section {
   padding: 4rem 2rem;
   background-color: #f1f1f1;
@@ -126,7 +124,6 @@ form {
 
 form label {
   font-weight: 500;
-  color: #333;
 }
 
 form input,
@@ -135,7 +132,6 @@ form textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
 }
 
 form textarea {
@@ -144,21 +140,8 @@ form textarea {
 }
 
 form button.btn {
-  margin-top: 1rem;
-  width: fit-content;
   align-self: center;
-  background-color: #0077c2;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-form button.btn:hover {
-  background-color: #005999;
+  width: fit-content;
 }
 
 /* Footer */
@@ -167,10 +150,6 @@ footer {
   color: white;
   padding: 2rem;
   text-align: center;
-}
-
-.contact-info p {
-  margin: 0.5rem 0;
 }
 
 .contact-info a {
@@ -188,10 +167,6 @@ footer {
     flex-direction: column;
     text-align: center;
   }
-
-  .hero-images {
-    margin-top: 2rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -202,7 +177,6 @@ footer {
   .hero-text p {
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    transform: skew(-4deg);
   }
 
   .btn {
