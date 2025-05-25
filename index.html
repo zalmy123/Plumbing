@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +8,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home-page"> <!-- Class to target homepage specific JS -->
+  <!-- Logo container for when it becomes fixed -->
+  <a href="index.html" id="fixed-logo-container" class="logo-container initially-hidden">
+    <img src="Transparent Logo.svg" alt="Modern Plumbing Co. Logo" id="fixed-site-logo">
+  </a>
+
   <main>
     <header class="hero">
+      <div class="hero-top-content">
+        <a href="index.html" id="hero-logo-link" class="logo-container">
+          <img src="Transparent Logo.svg" alt="Modern Plumbing Co. Logo" id="hero-site-logo">
+          <!-- Replace with your actual logo.png -->
+        </a>
+        <a href="contact.html" class="btn hero-contact-btn">Contact Us</a>
+      </div>
       <div class="hero-text">
-        <h1>Modern Plumbing Co.</h1>
-        <p>Your trusted plumbing solution.</p>
+        <h1>Timberwolf Waterworks</h1>
+        <p>Specializing in New Sewer Lateral connection</p>
       </div>
       <div class="hero-images">
         <img src="3.jpg" alt="Plumber at work">
@@ -25,17 +36,47 @@
 
     <section class="cta">
       <h2>Need Help With Plumbing?</h2>
+      <p style="margin-bottom: 2rem;">Our expert plumbers are ready to assist you with any issue, big or small. From leaky faucets to major pipe repairs, we provide fast, reliable, and affordable services.</p>
       <div class="cta-button-wrapper">
-        <a href="contact.html" class="btn">Contact Us</a>
+        <a href="contact.html" class="btn">Get a Quote</a>
+      </div>
+    </section>
+
+    <section class="services-overview">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-item">
+          <i class="fas fa-faucet-drip fa-3x"></i>
+          <h3>Leak Repairs</h3>
+          <p>Quick and efficient detection and repair of all types of leaks.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-toilet fa-3x"></i>
+          <h3>Toilet & Fixture</h3>
+          <p>Installation and repair of toilets, sinks, showers, and more.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-water fa-3x"></i>
+          <h3>Drain Cleaning</h3>
+          <p>Expert cleaning for clogged drains and sewer lines.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-toolbox fa-3x"></i>
+          <h3>Emergency Plumbing</h3>
+          <p>24/7 emergency services for urgent plumbing needs.</p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="contact-info">
-      <p><i class="fas fa-envelope"></i> <a href="mailto:info@modernplumbing.com">info@modernplumbing.com</a></p>
-      <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:info@timberwolfplumbing.com">info@timberwolfplumbing.com</a></p>
+      <p><i class="fas fa-phone"></i> 305-984-7984</p>
     </div>
+    <p>© 2025 Timberwolf Waterworks. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
