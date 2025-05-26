@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Base styles */
 html, body {
   height: 100%;
@@ -22,11 +20,11 @@ main {
 
 /* Logo Container Base (used by multiple logo instances) */
 .logo-container {
-  display: inline-block; /* Or block, depending on layout needs */
-  vertical-align: middle; /* Helps align with other inline-block elements */
+  display: inline-block; 
+  vertical-align: middle; 
 }
 .logo-container img {
-  display: block; /* Prevents extra space below image */
+  display: block; 
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -35,13 +33,13 @@ main {
 
 /* Homepage Hero Logo (inside hero-top-content) */
 #hero-site-logo {
-  width: 300px; /* Initial "big" size */
+  width: 75px; 
 }
 #hero-site-logo.scrolled-in-hero {
-  width: 150px; /* "Small" size when scrolled within hero */
+  width: 50px; 
 }
 
-/* Fixed Logo (Top Left, appears when hero is off-screen on homepage, or always on contact) */
+/* Fixed Logo (Top Left) */
 #fixed-logo-container,
 #contact-page-fixed-logo {
   position: fixed;
@@ -52,71 +50,78 @@ main {
 }
 #fixed-logo-container.initially-hidden {
   opacity: 0;
-  pointer-events: none; /* Don't interact when hidden */
-  transform: translateY(-20px); /* Start slightly off-screen for entry animation */
+  pointer-events: none; 
+  transform: translateY(-20px); 
 }
 #fixed-logo-container.visible {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
-#fixed-site-logo, /* Image inside #fixed-logo-container */
-#contact-page-fixed-logo img { /* Image inside #contact-page-fixed-logo */
-  width: 200px; /* Consistent small size when fixed */
+#fixed-site-logo, 
+#contact-page-fixed-logo img { 
+  width: 50px; 
 }
 
 
 /* Hero Section */
 .hero {
   position: relative;
-  background-color: #e1f5fe;
-  padding-bottom: 3rem; /* Space below hero content */
+  background-color: #e1f5fe; /* Light blue background for the hero section */
+  padding-bottom: 3rem; 
   overflow: hidden;
 }
 
 .hero-top-content {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Vertically align logo and button */
-  padding: 1.5rem 2rem; /* Spacing for this top bar area */
-  position: relative; /* For z-index if needed */
-  z-index: 10; /* Above hero-text if any overlap possibility */
+  align-items: center; 
+  padding: 1.5rem 2rem; 
+  position: relative; 
+  z-index: 10; 
 }
 
 .hero-contact-btn {
-  /* General .btn styles apply, add specifics if needed */
   padding: 0.6rem 1.2rem;
   font-size: 0.9rem;
-  flex-shrink: 0; /* Prevent button from shrinking if logo text is long */
+  flex-shrink: 0; 
 }
 
 .hero-text {
   text-align: center;
-  padding: 0rem 2rem 0; /* Padding from top-content to main hero text */
+  padding: 1rem 2rem 0; 
   margin-bottom: 2rem;
 }
 
-.hero-text h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: 3rem;
-  color: #0077c2;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+.hero-title-logo { /* For the SVG logo in hero */
+  display: block;
+  margin: 0 auto 1.5rem auto; 
+  max-width: 90%; /* Responsive width */
+  width: 600px; /* Increased desired width */
+  height: auto;
+  /* Ensure your SVG file has a transparent background for this to work as expected */
 }
 
-.hero-text p {
+.hero-specialization-text-container {
+  text-align: center; /* Centers the inline-block child */
+  margin-top: 2rem; /* Space above the text, after images */
+  padding: 0 1rem; /* Add some horizontal padding for safety on small screens */
+}
+
+.hero-specialization-text {
   font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
   font-weight: 500;
-  background-color: white;
-  display: inline-block;
+  background-color: white; /* White background for the box */
+  display: inline-block; /* Allows centering via parent and proper skew */
   padding: 0.75rem 1.25rem;
-  color: #0077c2;
-  transform: skew(-5deg);
+  color: #0077c2; /* Blue text */
+  transform: skew(-5deg); /* Slanted box effect */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  margin-top: 0;
+  max-width: 100%; /* Ensure it doesn't overflow its container */
 }
+
 
 /* Hero Images */
 .hero-images {
@@ -158,129 +163,104 @@ main {
 /* Services Overview Section */
 .services-overview { padding: 4rem 2rem; text-align: center; background-color: #f0f4f7; }
 .services-overview h2 { font-size: 2.2rem; margin-bottom: 2.5rem; color: #0077c2; font-family: 'Anton', sans-serif; }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
-.service-item { background-color: #fff; padding: 2rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.services-grid {
+  display: grid;
+  /* Adjust minmax to fit 5 items on wider screens. (1200px - 4*1.5rem_gap) / 5 items = ~220px per item */
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); 
+  gap: 1.5rem; /* Slightly reduced gap to help fit 5 items */
+  max-width: 1250px; /* Slightly increased max-width for 5 items with decent spacing */
+  margin: 0 auto;
+}
+.service-item {
+  background-color: #fff;
+  padding: 1.5rem 1rem; /* Reduced padding */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
 .service-item:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.12); }
-.service-item i { color: #0077c2; margin-bottom: 1rem; }
-.service-item h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: #333; }
-.service-item p { font-size: 0.95rem; color: #666; line-height: 1.5; }
+.service-item i { color: #0077c2; margin-bottom: 0.8rem; } /* Reduced margin */
+.service-item h3 { font-size: 1.25rem; margin-bottom: 0.4rem; color: #333; } /* Reduced font size and margin */
+.service-item p { font-size: 0.9rem; color: #666; line-height: 1.45; } /* Reduced font size */
+
+.combined-services-tile {
+  text-align: left; 
+  align-items: flex-start; 
+}
+.combined-services-tile h4 {
+  font-size: 1.15rem; 
+  color: #0077c2;
+  margin-bottom: 0.8rem; /* Reduced margin */
+  width: 100%;
+  text-align: center;
+}
+.sub-service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem; /* Reduced gap */
+  margin-bottom: 0.8rem; /* Reduced margin */
+  width: 100%; 
+  font-size: 0.85rem; /* Reduced font size */
+}
+.sub-service-list div {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem; /* Reduced gap */
+  color: #555;
+}
+.sub-service-list div i {
+  color: #0077c2;
+  margin-bottom: 0; 
+  font-size: 1em; /* Adjusted icon size */
+}
+.combined-services-tile p.combined-summary { /* Added class for specificity */
+  font-size: 0.85rem; 
+  text-align: center;
+  margin-top: auto; 
+}
 
 
-/* START OF MODIFIED/NEW CONTACT FORM STYLING */
+/* CONTACT FORM STYLING */
 .form-section {
   max-width: 700px;
-  margin: 0 auto 2rem auto; /* Reduced bottom margin */
-  padding: 2rem; /* Slightly reduced padding */
+  margin: 0 auto 2rem auto; 
+  padding: 2rem; 
   background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Softened shadow */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); 
 }
-
-.form-intro {
-  margin-bottom: 1.25rem; /* Slightly reduced */
-  text-align: center;
-  color: #555;
-  font-size: 1.05rem;
-}
-
-.form-section h2 {
-  text-align: center;
-  font-family: 'Anton', sans-serif;
-  font-size: 2.25rem; /* Slightly reduced */
-  color: #0077c2;
-  margin-bottom: 1rem;
-}
-
+.form-intro { margin-bottom: 1.25rem; text-align: center; color: #555; font-size: 1.05rem; }
+.form-section h2 { text-align: center; font-family: 'Anton', sans-serif; font-size: 2.25rem; color: #0077c2; margin-bottom: 1rem; }
 .form-section form > div,
-.form-section form > fieldset > div { /* Target divs inside fieldsets too */
-  margin-bottom: 0.9rem; /* REDUCED spacing between form fields/groups */
-}
-
-.form-section form label {
-  display: block;
-  margin-bottom: 0.4rem; /* REDUCED space between label and input */
-  font-weight: 500;
-  color: #333;
-  font-size: 0.95rem; /* Slightly smaller label text */
-}
-
+.form-section form > fieldset > div { margin-bottom: 0.9rem; }
+.form-section form label { display: block; margin-bottom: 0.4rem; font-weight: 500; color: #333; font-size: 0.95rem; }
 .form-section form input[type="text"],
 .form-section form input[type="email"],
 .form-section form input[type="tel"],
-.form-section form select, /* Added select here */
+.form-section form select, 
 .form-section form textarea {
-  width: 100%;
-  padding: 0.7rem 0.9rem; /* Slightly reduced padding */
-  /* margin-bottom: 1.2rem; */ /* REMOVED - div wrapper handles this */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem; /* Slightly smaller input text */
+  width: 100%; padding: 0.7rem 0.9rem; border: 1px solid #ccc; border-radius: 4px;
+  box-sizing: border-box; font-family: 'Poppins', sans-serif; font-size: 0.95rem; 
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .form-section form input:focus,
-.form-section form select:focus, /* Added select here */
+.form-section form select:focus, 
 .form-section form textarea:focus {
-  border-color: #0077c2;
-  outline: none;
-  box-shadow: 0 0 0 0.15rem rgba(0, 119, 194, 0.2); /* Reduced shadow size */
+  border-color: #0077c2; outline: none; box-shadow: 0 0 0 0.15rem rgba(0, 119, 194, 0.2); 
 }
-
-.form-section form textarea {
-  min-height: 100px; /* Reduced min-height */
-  resize: vertical;
-}
-
-.form-section form .btn {
-  display: block;
-  width: 100%;
-  padding: 0.8rem 1.5rem; /* Slightly adjusted padding */
-  font-size: 1.05rem; /* Slightly adjusted font size */
-  margin-top: 1.5rem; /* Adjusted top margin for button */
-}
-
-fieldset {
-  border: 1px solid #e0e0e0; /* Lighter border */
-  border-radius: 5px; /* Slightly smaller radius */
-  padding: 1rem 1.25rem; /* REDUCED padding inside fieldset */
-  margin-bottom: 1.25rem; /* REDUCED margin below fieldset */
-  background-color: transparent; /* Removed distinct background for a cleaner look */
-}
-
-legend {
-  font-weight: 500; /* Adjusted weight */
-  font-size: 1.1rem; /* Adjusted size */
-  color: #005999; /* Darker shade of blue for better contrast */
-  padding: 0 0.3rem;
-  margin-left: 0; /* Removed margin-left for tighter alignment */
-}
-
-.radio-group {
-  display: flex;
-  align-items: center;
-  gap: 1rem; /* REDUCED gap */
-  /* margin-bottom: 1.2rem; */ /* REMOVED - parent div handles margin */
-  padding-top: 0.2rem; /* Small padding to align with other inputs */
-}
-
-.radio-group input[type="radio"] {
-  margin-right: 0.3rem; /* REDUCED space */
-  transform: scale(1); /* Normal scale */
-}
-
-.radio-label { /* This label is specific to radio buttons */
-  font-weight: normal;
-  font-size: 0.95rem; /* Match input font size */
-  margin-bottom: 0 !important;
-}
-
-.form-section form select {
-  background-color: white;
-  /* Other styles already merged with input styles above */
-}
-/* END OF MODIFIED/NEW CONTACT FORM STYLING */
+.form-section form textarea { min-height: 100px; resize: vertical; }
+.form-section form .btn { display: block; width: 100%; padding: 0.8rem 1.5rem; font-size: 1.05rem; margin-top: 1.5rem; }
+fieldset { border: 1px solid #e0e0e0; border-radius: 5px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; background-color: transparent; }
+legend { font-weight: 500; font-size: 1.1rem; color: #005999; padding: 0 0.3rem; margin-left: 0; }
+.radio-group, .checkbox-group { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; padding-top: 0.2rem; }
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] { margin-right: 0.3rem; transform: scale(1); vertical-align: middle; }
+.radio-label, .checkbox-label { font-weight: normal; font-size: 0.95rem; margin-bottom: 0 !important; display: inline-block; vertical-align: middle; }
+.checkbox-group > div { display: flex; align-items: center; }
+.form-section form select { background-color: white; }
 
 
 /* Footer */
@@ -292,80 +272,71 @@ footer p:last-child { margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8; }
 .contact-info i { margin-right: 0.75rem; }
 
 /* Responsive */
+@media (max-width: 1280px) { /* Adjust breakpoint for 5 service items */
+    .services-grid {
+        /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  Allow slightly larger items if not 5 */
+    }
+}
+
+@media (max-width: 1024px) { /* Adjust when 5 items might break to 3 or 2 */
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Aim for 3-4 items */
+        gap: 1.2rem;
+    }
+}
+
+
 @media (max-width: 900px) {
   .hero-images img { flex: 1 1 45%; }
-  .services-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .services-grid { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); } /* Aim for 2-3 items */
 }
 
 @media (max-width: 768px) {
-  #hero-site-logo { width: 120px; }
-  #hero-site-logo.scrolled-in-hero { width: 80px; }
-  #fixed-site-logo, #contact-page-fixed-logo img { width: 70px; }
+  #hero-site-logo { width: 80px; } 
+  #hero-site-logo.scrolled-in-hero { width: 60px; } 
+  #fixed-site-logo, #contact-page-fixed-logo img { width: 60px; } 
   #fixed-logo-container, #contact-page-fixed-logo { top: 10px; left: 10px; }
 
   .hero-top-content { padding: 1rem 1.5rem; }
-  .hero-text h1 { font-size: 2.5rem; }
-  .hero-text p { font-size: 1.1rem; }
+  .hero-title-logo { width: 450px; max-width: 80%;} /* Adjusted size for tablets */
+  .hero-specialization-text { font-size: 1.1rem; padding: 0.6rem 1rem;}
 
-  /* Form responsive adjustments */
-  .form-section {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    padding: 1.5rem; /* Further reduced padding for smaller screens */
-  }
-  .form-section h2 {
-    font-size: 2rem;
-  }
-  fieldset {
-    padding: 0.75rem 1rem;
-  }
-  legend {
-    font-size: 1rem;
-  }
-  /* End form responsive adjustments */
+  .form-section { margin-left: 1rem; margin-right: 1rem; padding: 1.5rem; }
+  .form-section h2 { font-size: 2rem; }
+  fieldset { padding: 0.75rem 1rem; }
+  legend { font-size: 1rem; }
 
   .cta h2, .services-overview h2 { font-size: 2rem; }
+  .services-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; } /* Typically 2 items */
 }
 
 @media (max-width: 600px) {
-  #hero-site-logo { width: 100px; }
-  #hero-site-logo.scrolled-in-hero { width: 70px; }
-  #fixed-site-logo, #contact-page-fixed-logo img { width: 60px; }
-  #fixed-logo-container, #contact-page-fixed-logo { top: 10px; left: 10px; } /* Adjusted for potentially smaller logo */
+  #hero-site-logo { width: 70px; } 
+  #hero-site-logo.scrolled-in-hero { width: 50px; } 
+  #fixed-site-logo, #contact-page-fixed-logo img { width: 50px; } 
 
-  .hero-top-content {
-    padding: 0.75rem 1rem;
-    /* Consider stacking on very small screens if needed */
-    /* flex-direction: column; gap: 0.75rem; */
-  }
-  /* If stacking: #hero-logo-link { align-self: flex-start; } */
+  .hero-top-content { padding: 0.75rem 1rem; }
   .hero-contact-btn { font-size: 0.85rem; padding: 0.5rem 1rem; }
 
-  .hero-images img { flex: 1 1 100%; }
-  .hero-text { padding-top: 0.5rem; }
-  .hero-text h1 { font-size: 2rem; }
-  .hero-text p { font-size: 1rem; padding: 0.5rem 1rem; }
+  .hero-title-logo { width: 320px; max-width: 85%;} /* Adjusted for small screens */
+  .hero-specialization-text { font-size: 1rem; padding: 0.5rem 0.8rem; }
+
+  .hero-images img { flex: 1 1 100%; max-width: 300px; } 
 
   .btn { padding: 0.7rem 1.4rem; font-size: 0.9rem; }
 
-  /* Form responsive adjustments for smallest screens */
-  .form-section form label {
-    font-size: 0.9rem;
-  }
+  .form-section form label { font-size: 0.9rem; }
   .form-section form input[type="text"],
   .form-section form input[type="email"],
   .form-section form input[type="tel"],
   .form-section form select,
   .form-section form textarea,
-  .radio-label {
-    font-size: 0.9rem;
-  }
-  .form-section form .btn {
-    font-size: 1rem;
-    padding: 0.8rem 1.3rem;
-  }
-  /* End form responsive adjustments */
+  .radio-label, .checkbox-label { font-size: 0.9rem; }
+  .form-section form .btn { font-size: 1rem; padding: 0.8rem 1.3rem; }
+  .radio-group, .checkbox-group { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 
-  .services-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; } /* Stack service items */
   .service-item h3 { font-size: 1.3rem; }
+  .combined-services-tile { text-align: center; align-items: center;}
+  .sub-service-list div { justify-content: center;}
 }
