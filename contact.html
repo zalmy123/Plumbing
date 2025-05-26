@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us - Modern Plumbing Co.</title>
+  <title>Contact Us - Timberwolf Waterworks</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body class="contact-page"> <!-- Class to target contact page specific JS/CSS -->
   <a href="index.html" id="contact-page-fixed-logo" class="logo-container">
-    <img src="Transparent Logo.svg" alt="Modern Plumbing Co. Logo">
-    <!-- Make sure "Transparent Logo.svg" is the correct path to your logo -->
+    <img src="Transparent Logo.png" alt="Timberwolf Waterworks Logo">
   </a>
 
   <main>
@@ -49,16 +48,39 @@
           </div>
 
           <div>
+            <label for="county">County:</label>
+            <select name="county" id="county" required>
+              <option value="">--Please choose an option--</option>
+              <option value="Miami-Dade">Miami-Dade</option>
+              <option value="Broward">Broward</option>
+              <option value="Palm Beach">Palm Beach</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          
+          <div>
+            <label>Type of Service (check all that apply):</label>
+            <div class="checkbox-group">
+              <div><input type="checkbox" name="service_type[]" id="service_new_water" value="New Water"><label for="service_new_water" class="checkbox-label">New Water</label></div>
+              <div><input type="checkbox" name="service_type[]" id="service_new_sewer" value="New Sewer"><label for="service_new_sewer" class="checkbox-label">New Sewer</label></div>
+              <div><input type="checkbox" name="service_type[]" id="service_new_ostds" value="New OSTDS"><label for="service_new_ostds" class="checkbox-label">New OSTDS</label></div>
+              <div><input type="checkbox" name="service_type[]" id="service_septic_abandonment" value="Septic Tank Abandonment"><label for="service_septic_abandonment" class="checkbox-label">Septic Tank Abandonment</label></div>
+            </div>
+          </div>
+
+          <div>
             <label>Do you have an existing septic tank?</label>
             <div class="radio-group">
               <input type="radio" name="existing_septic" id="existing_septic_yes" value="Yes" required>
               <label for="existing_septic_yes" class="radio-label">Yes</label>
               <input type="radio" name="existing_septic" id="existing_septic_no" value="No" required>
               <label for="existing_septic_no" class="radio-label">No</label>
+              <input type="radio" name="existing_septic" id="existing_septic_na" value="N/A" required>
+              <label for="existing_septic_na" class="radio-label">N/A</label>
             </div>
           </div>
 
-          <div>
+          <div id="septic_location_group" style="display: none;">
             <label for="septic_location">If yes, where is the septic tank located?</label>
             <select name="septic_location" id="septic_location">
               <option value="">--Please choose an option--</option>
@@ -68,6 +90,23 @@
               <option value="Unknown">Unknown</option>
             </select>
           </div>
+
+          <div>
+            <label>Do you have existing Water service?</label>
+            <div class="radio-group">
+              <input type="radio" name="existing_water_service" id="existing_water_yes" value="Yes" required>
+              <label for="existing_water_yes" class="radio-label">Yes</label>
+              <input type="radio" name="existing_water_service" id="existing_water_no" value="No" required>
+              <label for="existing_water_no" class="radio-label">No</label>
+              <input type="radio" name="existing_water_service" id="existing_water_na" value="N/A" required>
+              <label for="existing_water_na" class="radio-label">N/A</label>
+            </div>
+          </div>
+          
+          <div id="water_service_location_group" style="display: none;">
+            <label for="water_service_location">If yes, location of water service (e.g., front meter, side of house):</label>
+            <input type="text" name="water_service_location" id="water_service_location">
+          </div>
           
           <div>
             <label for="sewer_main_location">Where is the city sewer main located relative to your property?</label>
@@ -75,18 +114,20 @@
               <option value="">--Please choose an option--</option>
               <option value="Front">Front of Property (Street Side)</option>
               <option value="Back">Back of Property (e.g., Alley)</option>
+              <option value="Side">Side of Property</option>
               <option value="Unknown">Unknown</option>
             </select>
           </div>
 
           <div>
-            <label for="distance_to_property_line">Approximate distance from house to property line (where sewer connection might be):</label>
+            <label for="distance_to_property_line">Approximate distance from building structure to property line (where municipal water or sewer service is located):</label>
             <select name="distance_to_property_line" id="distance_to_property_line">
               <option value="">--Please choose an option--</option>
               <option value="0-20 feet">0-20 feet</option>
-              <option value="21-30 feet">21-30 feet</option>
-              <option value="31-50 feet">31-50 feet</option>
-              <option value="Over 50 feet">Over 50 feet</option>
+              <option value="21-40 feet">21-40 feet</option>
+              <option value="41-60 feet">41-60 feet</option>
+              <option value="61-100 feet">61-100 feet</option>
+              <option value="Over 100 feet">Over 100 feet</option>
               <option value="Unknown">Unknown</option>
             </select>
           </div>
@@ -107,7 +148,7 @@
 
   <footer>
     <div class="contact-info">
-      <p><i class="fas fa-envelope"></i> <a href="mailto:info@modernplumbing.com">info@timberwolfplumbing.com</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:info@timberwolfplumbing.com">info@timberwolfplumbing.com</a></p>
       <p><i class="fas fa-phone"></i> 305-984-7984</p>
     </div>
     <p>© 2025 Timberwolf Waterworks. All rights reserved.</p>
