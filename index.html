@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modern Plumbing Co.</title>
+  <title>Timberwolf Waterworks</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -11,26 +11,27 @@
 <body class="home-page"> <!-- Class to target homepage specific JS -->
   <!-- Logo container for when it becomes fixed -->
   <a href="index.html" id="fixed-logo-container" class="logo-container initially-hidden">
-    <img src="Transparent Logo.svg" alt="Modern Plumbing Co. Logo" id="fixed-site-logo">
+    <img src="Transparent Logo.png" alt="Timberwolf Waterworks Logo" id="fixed-site-logo">
   </a>
 
   <main>
     <header class="hero">
       <div class="hero-top-content">
         <a href="index.html" id="hero-logo-link" class="logo-container">
-          <img src="Transparent Logo.svg" alt="Modern Plumbing Co. Logo" id="hero-site-logo">
-          <!-- Replace with your actual logo.png -->
+          <img src="Transparent Logo.png" alt="Timberwolf Waterworks Logo" id="hero-site-logo">
         </a>
         <a href="contact.html" class="btn hero-contact-btn">Contact Us</a>
       </div>
       <div class="hero-text">
-        <h1>Timberwolf Waterworks</h1>
-        <p>Specializing in New Sewer Lateral connection</p>
+        <img src="Transparent Logo.svg" alt="Timberwolf Waterworks Main Logo" class="hero-title-logo">
       </div>
       <div class="hero-images">
         <img src="3.jpg" alt="Plumber at work">
         <img src="5.jpg" alt="Pipe repair">
         <img src="4.jpg" alt="Tools">
+      </div>
+      <div class="hero-specialization-text-container">
+        <p class="hero-specialization-text">Specializing in New Sewer Lateral connection</p>
       </div>
     </header>
 
@@ -45,25 +46,35 @@
     <section class="services-overview">
       <h2>Our Services</h2>
       <div class="services-grid">
-        <div class="service-item">
-          <i class="fas fa-faucet-drip fa-3x"></i>
-          <h3>Leak Repairs</h3>
-          <p>Quick and efficient detection and repair of all types of leaks.</p>
+        <div class="service-item combined-services-tile">
+          <h4>Core Plumbing Solutions</h4>
+          <div class="sub-service-list">
+            <div><i class="fas fa-faucet-drip fa-fw"></i> Leak Repairs</div>
+            <div><i class="fas fa-toilet fa-fw"></i> Toilet & Fixture</div>
+            <div><i class="fas fa-water fa-fw"></i> Drain Cleaning</div>
+            <div><i class="fas fa-toolbox fa-fw"></i> Emergency Plumbing</div>
+          </div>
+          <p class="combined-summary">Comprehensive solutions for common residential and commercial plumbing needs.</p>
         </div>
         <div class="service-item">
-          <i class="fas fa-toilet fa-3x"></i>
-          <h3>Toilet & Fixture</h3>
-          <p>Installation and repair of toilets, sinks, showers, and more.</p>
+          <i class="fas fa-hand-holding-water fa-3x"></i>
+          <h3>New Water Service</h3>
+          <p>Installation of new water lines and connections to municipal supply.</p>
         </div>
         <div class="service-item">
-          <i class="fas fa-water fa-3x"></i>
-          <h3>Drain Cleaning</h3>
-          <p>Expert cleaning for clogged drains and sewer lines.</p>
+          <i class="fas fa-road-circle-check fa-3x"></i>
+          <h3>New Sewer Service</h3>
+          <p>Expert connection to city sewer mains, including new laterals.</p>
         </div>
         <div class="service-item">
-          <i class="fas fa-toolbox fa-3x"></i>
-          <h3>Emergency Plumbing</h3>
-          <p>24/7 emergency services for urgent plumbing needs.</p>
+          <i class="fas fa-clipboard-list fa-3x"></i>
+          <h3>New OSTDS (Septic)</h3>
+          <p>Type 1/2/3 design and installation, meeting new code requirements.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-house-user fa-3x"></i>
+          <h3>Home Service</h3>
+          <p>General plumbing maintenance, inspections, and repairs for your home.</p>
         </div>
       </div>
     </section>
